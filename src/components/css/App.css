@@ -1,0 +1,1 @@
+*{margin:0;padding:0}*,::after,::before{-webkit-box-sizing:border-box;box-sizing:border-box}.mainComponent{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);grid-template-areas:'location'}.mainComponent .location{grid-area:location}.mainComponent .weatherData{grid-area:weatherData}
