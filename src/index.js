@@ -3,6 +3,15 @@ import { render } from 'react-dom';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCloud,faCloudShowersHeavy,faCloudSunRain,faCloudMoonRain,faCloudSun } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
+
+
+library.add(faCloud,faCloudShowersHeavy,faCloudSunRain,faCloudMoonRain,faCloudSun);
 
 render(<App />, document.getElementById('root'));
 

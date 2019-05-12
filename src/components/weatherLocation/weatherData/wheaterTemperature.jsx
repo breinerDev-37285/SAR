@@ -1,35 +1,30 @@
 import React from 'react'
-import WeatherIcons from 'react-weathericons';
-import { SUN,RAIN,STORM,STORM_NIGHT } from '../../../constants/wheaters'
-import PropTypes from 'prop-types'
+import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome'
 
-const getIcons = data => {
+const getIcon = ( data ) => {
     switch( data ){
-        case RAIN:
-            return <WeatherIcons name="day-rain" size="2x" />
-        case SUN:
-            return <WeatherIcons name="day-cloudy-high" size="2x" />
-        case STORM_NIGHT:
-            return <WeatherIcons name="night-alt-sleet-storm" size="2x" />
-        case STORM:
-            return <WeatherIcons name="thunderstorm" size="2x" />
-        
+        case 'lluvia':
+            return <FontAwesomeIcon icon="cloud-showers-heavy"  className="icon"  />
+        case 'sol':
+            return <FontAwesomeIcon icon="cloud-sun"  className="icon"  />
+        case 'Clouds':
+            return <FontAwesomeIcon icon="cloud"  className="icon"  />
+        case 'dia_lluvia':
+            return <FontAwesomeIcon icon="cloud-moon-rain"  className="icon"  />
+        case 'noche_lluvia':
+            return <FontAwesomeIcon icon="cloud-sun-rain"  className="icon"  />
         default: 
-        return <WeatherIcons name="cloud" size="2x" />
+            return <FontAwesomeIcon icon="cloud"  className="icon"  />
     }
 }
 
-const weatherTemperature = ({temperature,state}) => (
+
+const weatherTemperature = ({ temperature, estado }) => (
     <div className="weatherTemperature">
-        { getIcons(state) }
+        { getIcon( estado ) }
         <span>{temperature} Cº</span>
     </div>
 )
-
-weatherTemperature.propTypes = {
-    temperature: PropTypes.number.isRequired,
-    state: PropTypes.string
-}
 
 
 export default weatherTemperature
